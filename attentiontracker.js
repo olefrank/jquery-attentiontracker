@@ -248,60 +248,6 @@
                }
            }
 
-            // var sdArr= [];
-            // var message = "";
-            // var iter = 0;
-            // var tempPct = 0;
-
-            // // alternativ (næsten færdig) løsning
-            // function calcScrollDepth() {
-
-            //     if (viewBottom >= elementTop && scrollDepthPct < 1) {
-            //         // Scroll depth on page
-            //         var scrollDepthPctCalc =  (viewBottom - elementTop) / elementHeight;
-
-            //         // only increment
-            //         if ( scrollDepthPctCalc > scrollDepthPct && scrollDepthPct !== roundFloor(scrollDepthPctCalc)) {
-
-            //             // limit to 100%
-            //             scrollDepthPct = scrollDepthPctCalc > 1 ? 1 : scrollDepthPctCalc;
-
-            //             // round floor scroll depth
-            //             scrollDepthPct = roundFloor(scrollDepthPct);
-
-            //             // send event
-            //             message = "";
-            //             iter = 0;
-            //             tempPct = 0;
-                        
-            //             // settings.logCallback("tempPct " + tempPct + " scrollDepthPct " + scrollDepthPct);
-
-            //             while (tempPct <= scrollDepthPct) {
-            //                 tempPct = iter * settings.scrolldepthInterval;
-
-            //                 if (sdArr.indexOf(tempPct) === -1) {
-            //                     message += settings.scrolldepthEventPrefix + "=" + Math.round(tempPct * 100);
-            //                     //settings.logCallback(message);
-
-            //                     sdArr.push(tempPct);
-            //                 }
-
-            //                 iter++;
-            //             }
-
-            //             settings.logCallback(message);
-            //         }
-            //    }
-
-            //     // not used
-            //     return scrollDepthPct;
-            // }
-
-            // function roundFloor(value) {
-            //     var interval = settings.scrolldepthInterval;
-            //     return ~~(value / interval) * interval;
-            // }
-
             // Determines if element fills percentage of view
             // ex. if settings.pctInView = 50 -> calcutales if element fills 50% of view
             function isElementVisible() {
@@ -322,8 +268,6 @@
             function startTimer() {
                 dateStart = new Date();
                 isTimerRunning = true;
-
-                // console.log("timer started");
             }
 
             // Sets dateEnd (= timer stop)
@@ -339,8 +283,6 @@
                 if (timeSpent > settings.scrollByThresholdMs) {
                     totalTime += timeSpent;
                 }
-
-                // console.log("stop timer: total time= " + totalTime);
             }
 
         }); // end return
